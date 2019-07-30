@@ -1,2 +1,2 @@
 # Texchallenge
-create an automated machine weaving loom
+Create an automated machine weaving loom
