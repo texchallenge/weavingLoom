@@ -1,6 +1,9 @@
 //
 // ATTENTION : Inspect code to understand what is does before uploading to loom
 //
+#include "pins_arduino.h"
+#include "wiring_private.h"
+
 // RAMPS X inslag 1
   const int dirPinInslag1 = A1;
   const int stepPinInslag1 = A0;
