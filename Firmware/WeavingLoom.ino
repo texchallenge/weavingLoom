@@ -60,15 +60,25 @@ void setup() {
 }
 
 void loop() {
-  // Test endstop
-  while (!digitalRead(3))
+  // // Test 1 endstop
+  // while (!digitalRead(INSLAG_ENDSTOP_LEFT))
+  // {
+  //   digitalWrite(LED_BUILTIN, HIGH);
+  //   delay(1000);
+  //   digitalWrite(LED_BUILTIN, LOW);
+  //   delay(1000);
+  // }
+  // delay(5000);
+  // Test 2 endstop
+  if (!digitalRead(INSLAG_ENDSTOP_LEFT))
   {
     digitalWrite(LED_BUILTIN, HIGH);
-    delay(1000);
-    digitalWrite(LED_BUILTIN, LOW);
-    delay(1000);
   }
-  delay(5000);
+  else
+  {
+    digitalWrite(LED_BUILTIN, LOW);
+  }
+  
 
   // if (!digitalRead(button)) {
   //   // SchachtenNaarBoven();
