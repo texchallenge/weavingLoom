@@ -37,6 +37,7 @@ const int delayStepsRiet = 30;
 const int microStepsDoekBoom = 32; // 1 for 32 microsteps, 32 for ful steps
 const int delayStepsDoekBoom = 30;
 const int button = 35;
+const int INSLAG_ENDSTOP_LEFT = PIN3;
 
 void setup() {
   pinMode(stepPinInslag1, OUTPUT);
@@ -55,28 +56,39 @@ void setup() {
   // pinMode(dirPinDoekBoom, OUTPUT);
   // pinMode(enablePinDoekBoom, OUTPUT);
   pinMode(button, INPUT_PULLUP);
+  pinMode(INSLAG_ENDSTOP_LEFT, INPUT_PULLUP);
 }
 
 void loop() {
-  if (!digitalRead(button)) {
-    // SchachtenNaarBoven();
-    // delay(1000);
-    // InslagdraadAanslaan();
-    // delay(1000);
-    // DoekOpbomen();
-    // delay(1000);
-       InslagNaarLinks();
-       delay(1000);
-    // SchachtenNaarBeneden();
-    // delay(1000);
-    // InslagdraadAanslaan();
-    // delay(1000);
-    // DoekOpbomen();
-    // delay(1000);
-       InslagNaarRechts();
-       delay(1000);
+  // Test endstop
+  while (!digitalRead(3))
+  {
+    digitalWrite(LED_BUILTIN, HIGH);
+    delay(1000);
+    digitalWrite(LED_BUILTIN, LOW);
+    delay(1000);
   }
-  delay(1000);
+  delay(5000);
+
+  // if (!digitalRead(button)) {
+  //   // SchachtenNaarBoven();
+  //   // delay(1000);
+  //   // InslagdraadAanslaan();
+  //   // delay(1000);
+  //   // DoekOpbomen();
+  //   // delay(1000);
+  //      InslagNaarLinks();
+  //      delay(1000);
+  //   // SchachtenNaarBeneden();
+  //   // delay(1000);
+  //   // InslagdraadAanslaan();
+  //   // delay(1000);
+  //   // DoekOpbomen();
+  //   // delay(1000);
+  //      InslagNaarRechts();
+  //      delay(1000);
+  // }
+  // delay(1000);
 }
 
   void InslagNaarRechts() {
