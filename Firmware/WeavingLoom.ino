@@ -1,8 +1,9 @@
 //
 // ATTENTION : Inspect code to understand what is does before uploading to loom
 //
-#include "pins_arduino.h"
-#include "wiring_private.h"
+#include <LiquidCrystal.h>
+#include <pins_arduino.h>
+#include <wiring_private.h>
 
 // RAMPS X inslag 1
   const int dirPinInslag1 = A1;
@@ -27,7 +28,12 @@ const int enablePinRiet = A8;
 const int dirPinDoekBoom = 48;
 const int stepPinDoekBoom = 46;
 const int enablePinDoekBoom = A8;
-
+// D1scount Smart Controller
+// Initialize the library by associating any needed LCD interface pin
+// with the arduino pin number it is connected to.
+const int RS = 16, EN = 17, D4 = 23, D5 = 25, D6 =27, D7 = 29;
+LiquidCrystal lcd(RS, EN, D4, D5, D6, D7);
+//
 const int microStepsInslag = 32; // 1 for 32 microsteps, 32 for ful steps
 const int delayStepsInslag = 30;
 const int microStepsSchachten = 32; // 1 for 32 microsteps, 32 for ful steps
@@ -36,16 +42,17 @@ const int microStepsRiet = 32; // 1 for 32 microsteps, 32 for ful steps
 const int delayStepsRiet = 30;
 const int microStepsDoekBoom = 32; // 1 for 32 microsteps, 32 for ful steps
 const int delayStepsDoekBoom = 30;
-const int button = 35;
+const int ENCODER_BUTTON = 35;
 const int INSLAG_ENDSTOP_LEFT = PIN3;
+const int INSLAG_ENDSTOP_RIGHT = PIN2;
 
 void setup() {
-  pinMode(stepPinInslag1, OUTPUT);
-  pinMode(dirPinInslag1, OUTPUT);
-  pinMode(enablePinInslag1, OUTPUT);
-  pinMode(stepPinInslag2, OUTPUT);
-  pinMode(dirPinInslag2, OUTPUT);
-  pinMode(enablePinInslag2, OUTPUT);
+  // pinMode(stepPinInslag1, OUTPUT);
+  // pinMode(dirPinInslag1, OUTPUT);
+  // pinMode(enablePinInslag1, OUTPUT);
+  // pinMode(stepPinInslag2, OUTPUT);
+  // pinMode(dirPinInslag2, OUTPUT);
+  // pinMode(enablePinInslag2, OUTPUT);
   // pinMode(stepPinSchachten, OUTPUT);
   // pinMode(dirPinSchachten, OUTPUT);
   // pinMode(enablePinSchachten, OUTPUT);
@@ -55,22 +62,77 @@ void setup() {
   // pinMode(stepPinDoekBoom, OUTPUT);
   // pinMode(dirPinDoekBoom, OUTPUT);
   // pinMode(enablePinDoekBoom, OUTPUT);
-  pinMode(button, INPUT_PULLUP);
+  pinMode(ENCODER_BUTTON, INPUT_PULLUP);
   pinMode(INSLAG_ENDSTOP_LEFT, INPUT_PULLUP);
+  pinMode(INSLAG_ENDSTOP_RIGHT, INPUT_PULLUP);
+  // Set up the LCD's number of columns and rows:
+  lcd.begin(20, 4);
+  // Print a message to the LCD.
+  lcd.print("Welcome to TexChallenge");
+  delay(3000);
 }
 
 void loop() {
-  // Test endstop
-  while (!digitalRead(3))
+  lcd.clear();
+  lcd.print("Press left endstop ");
+  // Test left endstop
+  while (!digitalRead(INSLAG_ENDSTOP_LEFT))
   {
-    digitalWrite(LED_BUILTIN, HIGH);
-    delay(1000);
-    digitalWrite(LED_BUILTIN, LOW);
-    delay(1000);
+    // lcd.print(".");
+    // for (int i = 0; i < 100; i++)
+    // {
+    //   delay(10);
+    //   if (!digitalRead(INSLAG_ENDSTOP_LEFT))
+    //   {
+    //     endstopPressed = true;
+    //   }
+    // }
   }
-  delay(5000);
+  lcd.setCursor(0, 1);
+  lcd.print("OK");
+  delay(500);
+  lcd.clear();
+  delay(1000);
+  lcd.print("Press right endstop ");
+  // Test right endstop
+  while (!digitalRead(INSLAG_ENDSTOP_RIGHT) || digitalRead(ENCODER_BUTTON))
+  {
+    // lcd.print(".");
+    // for (int i = 0; i < 100; i++)
+    // {
+    //   delay(10);
+    //   if (!digitalRead(INSLAG_ENDSTOP_LEFT))
+    //   {
+    //     endstopPressed = true;
+    //   }
+    // }
+  }
+  lcd.setCursor(0, 1);
+  lcd.print("OK");
+  delay(500);
+  lcd.clear();
+  delay(1000);
+  lcd.print("Press button ");
+  // Test encoder button
+  while (digitalRead(ENCODER_BUTTON))
+  {
+    // lcd.print(".");
+    // for (int i = 0; i < 100; i++)
+    // {
+    //   delay(10);
+    //   if (!digitalRead(ENCODER_BUTTON))
+    //   {
+    //     encoderButtonPressed = true;
+    //   }
+    // }
+  }
+  lcd.setCursor(0, 1);
+  lcd.print("OK");
+  delay(500);
+  lcd.clear();
+  delay(3000);
 
-  // if (!digitalRead(button)) {
+  // if (!digitalRead(ENCODER_BUTTON)) {
   //   // SchachtenNaarBoven();
   //   // delay(1000);
   //   // InslagdraadAanslaan();
