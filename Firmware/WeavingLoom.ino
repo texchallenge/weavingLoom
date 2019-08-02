@@ -43,8 +43,10 @@ const int delayStepsRiet = 30;
 const int microStepsDoekBoom = 32; // 1 for 32 microsteps, 32 for ful steps
 const int delayStepsDoekBoom = 30;
 const int ENCODER_BUTTON = 35;
-const int INSLAG_ENDSTOP_LEFT = PIN3;
-const int INSLAG_ENDSTOP_RIGHT = PIN2;
+// const int INSLAG_ENDSTOP_LEFT = PIN3;
+// const int INSLAG_ENDSTOP_RIGHT = PIN2;
+const int INSLAG_ENDSTOP_LEFT = 14;
+const int INSLAG_ENDSTOP_RIGHT = 15;
 
 void setup() {
   // pinMode(stepPinInslag1, OUTPUT);
@@ -68,7 +70,7 @@ void setup() {
   // Set up the LCD's number of columns and rows:
   lcd.begin(20, 4);
   // Print a message to the LCD.
-  lcd.print("Welcome to TexChallenge");
+  lcd.print("TexChallenge");
   delay(3000);
 }
 
@@ -95,7 +97,8 @@ void loop() {
   delay(1000);
   lcd.print("Press right endstop ");
   // Test right endstop
-  while (!digitalRead(INSLAG_ENDSTOP_RIGHT) || digitalRead(ENCODER_BUTTON))
+  // while (!digitalRead(INSLAG_ENDSTOP_RIGHT) || digitalRead(ENCODER_BUTTON) || !digitalRead(INSLAG_ENDSTOP_LEFT))
+  while (!digitalRead(INSLAG_ENDSTOP_RIGHT))
   {
     // lcd.print(".");
     // for (int i = 0; i < 100; i++)
