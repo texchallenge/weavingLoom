@@ -120,7 +120,7 @@ void loop() {
     // delay(testDelay);
   // }
   }
-  delay(1000);
+  delay(testDelay);
 }
 
 void InslagNaarRechts() {
