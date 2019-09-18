@@ -125,7 +125,17 @@ void loop() {
 void InslagNaarRechts() {
   digitalWrite(dirPinInslag1, LOW);
   digitalWrite(dirPinInslag2, LOW);
-  for (int x = 0; x < 650; x++) {
+  // Without endstop
+  // for (int x = 0; x < 650; x++) {
+  //   digitalWrite(stepPinInslag1, HIGH);
+  //   digitalWrite(stepPinInslag2, HIGH);
+  //   //delayMicroseconds(2000);
+  //   digitalWrite(stepPinInslag1, LOW);
+  //   digitalWrite(stepPinInslag2, LOW);
+  //   delayMicroseconds(microStepsInslag * delayStepsInslag);
+  // }
+  // With endstop
+  while (!digitalRead(INSLAG_ENDSTOP_RIGHT)) {
     digitalWrite(stepPinInslag1, HIGH);
     digitalWrite(stepPinInslag2, HIGH);
     //delayMicroseconds(2000);
@@ -138,7 +148,17 @@ void InslagNaarRechts() {
 void InslagNaarLinks() {
   digitalWrite(dirPinInslag1, HIGH);
   digitalWrite(dirPinInslag2, HIGH);
-  for (int x = 0; x < 650; x++) {
+  // Without endstop
+  // for (int x = 0; x < 650; x++) {
+  //   digitalWrite(stepPinInslag1, HIGH);
+  //   digitalWrite(stepPinInslag2, HIGH);
+  //   //delayMicroseconds(2000);
+  //   digitalWrite(stepPinInslag1, LOW);
+  //   digitalWrite(stepPinInslag2, LOW);
+  //   delayMicroseconds(microStepsInslag * delayStepsInslag);
+  // }
+  // With endstop
+  while (!digitalRead(INSLAG_ENDSTOP_LEFT)) {
     digitalWrite(stepPinInslag1, HIGH);
     digitalWrite(stepPinInslag2, HIGH);
     //delayMicroseconds(2000);
