@@ -44,6 +44,7 @@ const int INSLAG_ENDSTOP_LEFT = 18;
 const int INSLAG_ENDSTOP_RIGHT = 19;
 // Weavingparameters
 const int gaap = 440;
+const int testDelay = 100;
 
 void setup() {
   pinMode(stepPinInslag1, OUTPUT);
@@ -80,7 +81,7 @@ void loop() {
   lcd.print("OK");
   delay(500);
   lcd.clear();
-  delay(1000);
+  delay(500);
   lcd.print("Press right endstop ");
   // Test right endstop
   while (!digitalRead(INSLAG_ENDSTOP_RIGHT)) { }
@@ -88,7 +89,7 @@ void loop() {
   lcd.print("OK");
   delay(500);
   lcd.clear();
-  delay(1000);
+  delay(500);
   lcd.print("Press button ");
   // Test encoder button
   while (digitalRead(ENCODER_BUTTON)) { }
@@ -96,27 +97,27 @@ void loop() {
   lcd.print("OK");
   delay(500);
   lcd.clear();
-  lcd.print("Riet in 3s");
+  lcd.print("Start in 3s");
   delay(3000);
 
   for (int i = 0; i < 4; i++) {
   // if (!digitalRead(ENCODER_BUTTON)) {
     SchachtenNaarBoven();
-    delay(1000);
+    delay(testDelay);
     InslagNaarLinks();
-    delay(1000);
+    delay(testDelay);
     InslagdraadAanslaan();
-    delay(1000);
+    delay(testDelay);
     // DoekOpbomen();
-    // delay(1000);
+    // delay(testDelay);
     SchachtenNaarBeneden();
-    delay(1000);
+    delay(testDelay);
     InslagNaarRechts();
-    delay(1000);
+    delay(testDelay);
     InslagdraadAanslaan();
-    delay(1000);
+    delay(testDelay);
     // DoekOpbomen();
-    // delay(1000);
+    // delay(testDelay);
   // }
   }
   delay(1000);
