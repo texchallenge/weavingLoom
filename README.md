@@ -1,6 +1,6 @@
 # Texchallenge
 
-This repository is the result of an event housed by [**TimeLab**](https://timelab.org/) in the beautifull city of Gent
+#This repository is the result of an event housed by [**TimeLab**](https://timelab.org/) in the beautifull city of Gent
 
 The goal of it was to create an automated machine weaving loom in an open source contexte.
 
