@@ -801,6 +801,10 @@ $PEXTMAX
  30
 0
   9
+$GRIDMODE
+ 70
+    1
+  9
 $SNAPSTYLE
  70
     0
@@ -1111,9 +1115,9 @@ AcDbViewportTableRecord
  21
 1
  12
-321.5625000000001
+324.998274311216
  22
-145.9375000000001
+204.1901316374164
  13
 0
  23
@@ -1139,9 +1143,9 @@ AcDbViewportTableRecord
  37
 0
  40
-432.5000000000002
+635.7223876725018
  41
-1.75650289017341
+1.784775465498357
  42
 50
  43
@@ -2253,7 +2257,7 @@ AcDbLayerTableRecord
   2
 1
  70
-    4
+    0
  62
     7
   6
@@ -2275,9 +2279,11 @@ AcDbLayerTableRecord
   2
 hulplijnen
  70
-    0
+    4
  62
-    7
+  253
+420
+10526884
   6
 CONTINUOUS
 370
@@ -2433,7 +2439,7 @@ Standard
  70
     0
  40
-1
+2.5
  41
 2.5
  42
@@ -2457,7 +2463,7 @@ Standard
 141
 0.09
 142
-2.5
+0
 143
 25.4
 144
@@ -2485,7 +2491,7 @@ Standard
  77
     0
  78
-    1
+    8
  79
     0
 170
@@ -2523,7 +2529,7 @@ Standard
 277
     2
 278
-    0
+   44
 279
     0
 280
@@ -2545,7 +2551,7 @@ Standard
 289
     3
 340
-standard
+STANDARD
 341
 
 371
@@ -2709,52 +2715,6 @@ ByLayer
 100
 AcDbPolyline
  90
-    6
- 70
-    1
- 43
-0
- 10
-0
- 20
-0
- 10
-0
- 20
-220
- 10
-600
- 20
-220
- 10
-600
- 20
-0
- 10
-0
- 20
-0
- 10
-0
- 20
-0
-  0
-LWPOLYLINE
-  5
-50
-100
-AcDbEntity
-  8
-hulplijnen
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbPolyline
- 90
     5
  70
     0
@@ -2783,6 +2743,30 @@ AcDbPolyline
   0
 LINE
   5
+50
+100
+AcDbEntity
+  8
+hulplijnen
+  6
+ByLayer
+ 62
+  256
+370
+   -1
+100
+AcDbLine
+ 10
+20
+ 20
+-10
+ 11
+20
+ 21
+230
+  0
+LINE
+  5
 51
 100
 AcDbEntity
@@ -2797,41 +2781,17 @@ ByLayer
 100
 AcDbLine
  10
-20
+30
  20
 -10
  11
-20
+30
  21
 230
   0
 LINE
   5
 52
-100
-AcDbEntity
-  8
-hulplijnen
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbLine
- 10
-30
- 20
--10
- 11
-30
- 21
-230
-  0
-LINE
-  5
-53
 100
 AcDbEntity
   8
@@ -2855,7 +2815,7 @@ AcDbLine
   0
 LINE
   5
-54
+53
 100
 AcDbEntity
   8
@@ -2876,6 +2836,30 @@ AcDbLine
 47.5
  21
 -10.00000000000001
+  0
+LINE
+  5
+54
+100
+AcDbEntity
+  8
+hulplijnen
+  6
+ByLayer
+ 62
+  256
+370
+   -1
+100
+AcDbLine
+ 10
+165
+ 20
+-20.00000000000004
+ 11
+165
+ 21
+-10.00000000000004
   0
 LINE
   5
@@ -2917,30 +2901,6 @@ ByLayer
 100
 AcDbLine
  10
-165
- 20
--20.00000000000004
- 11
-165
- 21
--10.00000000000004
-  0
-LINE
-  5
-57
-100
-AcDbEntity
-  8
-hulplijnen
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbLine
- 10
 215
  20
 -20.00000000000005
@@ -2951,7 +2911,7 @@ AcDbLine
   0
 LINE
   5
-58
+57
 100
 AcDbEntity
   8
@@ -2975,7 +2935,7 @@ AcDbLine
   0
 LINE
   5
-59
+58
 100
 AcDbEntity
   8
@@ -2999,7 +2959,7 @@ AcDbLine
   0
 LINE
   5
-5A
+59
 100
 AcDbEntity
   8
@@ -3023,7 +2983,7 @@ AcDbLine
   0
 LINE
   5
-5B
+5A
 100
 AcDbEntity
   8
@@ -3042,6 +3002,30 @@ AcDbLine
 -20.00000000000014
  11
 552.5
+ 21
+-10.00000000000014
+  0
+LINE
+  5
+5B
+100
+AcDbEntity
+  8
+hulplijnen
+  6
+ByLayer
+ 62
+  256
+370
+   -1
+100
+AcDbLine
+ 10
+570
+ 20
+-20.00000000000014
+ 11
+570
  21
 -10.00000000000014
   0
@@ -3061,11 +3045,11 @@ ByLayer
 100
 AcDbLine
  10
-570
+580
  20
 -20.00000000000014
  11
-570
+580
  21
 -10.00000000000014
   0
@@ -3085,13 +3069,13 @@ ByLayer
 100
 AcDbLine
  10
-580
+-20
  20
--20.00000000000014
+0
  11
-580
+-10
  21
--10.00000000000014
+0
   0
 LINE
   5
@@ -3111,39 +3095,15 @@ AcDbLine
  10
 -20
  20
-0
+12
  11
 -10
  21
-0
+12
   0
 LINE
   5
 5F
-100
-AcDbEntity
-  8
-hulplijnen
-  6
-ByLayer
- 62
-  256
-370
-   -1
-100
-AcDbLine
- 10
--20
- 20
-12
- 11
--10
- 21
-12
-  0
-LINE
-  5
-60
 100
 AcDbEntity
   8
@@ -3167,7 +3127,7 @@ AcDbLine
   0
 LINE
   5
-61
+60
 100
 AcDbEntity
   8
@@ -3191,7 +3151,7 @@ AcDbLine
   0
 LINE
   5
-62
+61
 100
 AcDbEntity
   8
@@ -3212,6 +3172,198 @@ AcDbLine
 -9.999999999999988
  21
 208
+  0
+LINE
+  5
+62
+100
+AcDbEntity
+  8
+hulplijnen
+  6
+ByLayer
+ 62
+  256
+370
+   -1
+100
+AcDbLine
+ 10
+-19.99999999999999
+ 20
+221
+ 11
+-9.999999999999986
+ 21
+221
+  0
+LINE
+  5
+63
+100
+AcDbEntity
+  8
+hulplijnen
+  6
+ByLayer
+ 62
+    1
+370
+   -1
+100
+AcDbLine
+ 10
+-20
+ 20
+120
+ 11
+-10
+ 21
+120
+  0
+LINE
+  5
+64
+100
+AcDbEntity
+  8
+hulplijnen
+  6
+ByLayer
+ 62
+    1
+370
+   -1
+100
+AcDbLine
+ 10
+-20
+ 20
+100
+ 11
+-10
+ 21
+100
+  0
+LINE
+  5
+65
+100
+AcDbEntity
+  8
+hulplijnen
+  6
+ByLayer
+ 62
+    3
+370
+   -1
+100
+AcDbLine
+ 10
+-20
+ 20
+110
+ 11
+-10
+ 21
+110
+  0
+LINE
+  5
+66
+100
+AcDbEntity
+  8
+hulplijnen
+  6
+ByLayer
+ 62
+  256
+370
+   -1
+100
+AcDbLine
+ 10
+8.572244476756641e-015
+ 20
+120
+ 11
+1.475650656355965e-014
+ 21
+221
+  0
+LINE
+  5
+67
+100
+AcDbEntity
+  8
+hulplijnen
+  6
+ByLayer
+ 62
+  256
+370
+   -1
+100
+AcDbLine
+ 10
+600
+ 20
+-20.00000000000014
+ 11
+600
+ 21
+-10.00000000000015
+  0
+LINE
+  5
+68
+100
+AcDbEntity
+  8
+hulplijnen
+  6
+ByLayer
+ 62
+  256
+370
+   -1
+100
+AcDbLine
+ 10
+8.572244476756641e-015
+ 20
+120
+ 11
+1.475650656355965e-014
+ 21
+221
+  0
+LINE
+  5
+69
+100
+AcDbEntity
+  8
+hulplijnen
+  6
+ByLayer
+ 62
+  256
+370
+   -1
+100
+AcDbLine
+ 10
+1.475650656355965e-014
+ 20
+221
+ 11
+600
+ 21
+221
   0
 ENDSEC
   0
